@@ -18,11 +18,16 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import IframeComponent from './components/IframeComponent'
+import { Card } from 'react-bootstrap'
 
 const App = () => {
   return (
     <Router>
       <Header />
+      <Card className='my-3 p-3 rounded'>
+        <IframeComponent />
+      </Card>
       <main className='py-3'>
         <Container>
           <Route path='/order/:id' component={OrderScreen} />

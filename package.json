@@ -16,6 +16,7 @@
   "author": "Aharon Lubitsch",
   "license": "MIT",
   "dependencies": {
+    "@daily-co/daily-js": "^0.9.996",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
