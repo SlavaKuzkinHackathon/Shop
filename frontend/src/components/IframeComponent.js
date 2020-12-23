@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import DailyIframe from "@daily-co/daily-js";
+import { Card, Button,} from 'react-bootstrap'
 
 const DailyCo = ({ url }) => {
   const iframeRef = useRef(null);
@@ -17,13 +18,17 @@ const DailyCo = ({ url }) => {
     };
   }, [url]);
   return (
-    <iframe
-      style={{ width: "80%", height: "50vh", border: 0 }}
-      title="video call iframe"
-      ref={iframeRef}
-      allow="camera; microphone; fullscreen"
-      key={url}
-    />
+    <div>
+      <Card className='my-6 p-6 rounded'>
+        <iframe
+          style={{ width: "100%", height: "80vh", border: 0 }}
+          title="video call iframe"
+          ref={iframeRef}
+          allow="camera; microphone; fullscreen"
+          key={url}
+        />
+      </Card>
+    </div>
   );
 };
 
@@ -31,7 +36,7 @@ export default function App() {
   const [currentTable, setCurrentTable] = useState("srtoprWrordHePll77io");
   return (
     <div className="App">
-      <button type="button" class="btn btn-danger btn-sm"
+      <Button className='my-6' type='button'
         onClick={() => {
           setCurrentTable(val =>
             val === "srtoprWrordHePll77io"
@@ -41,7 +46,7 @@ export default function App() {
         }}
       >
         Videocall/Chanel
-      </button>
+      </Button>
       <DailyCo url={`https://meetanyway.daily.co/${currentTable}`} />
     </div>
   );
